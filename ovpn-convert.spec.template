@@ -1,0 +1,34 @@
+Name:           ovpn-convert
+Version:        __RELEASE_VERSION__
+Release:        1%{?dist}
+Summary:        ovpn-convert
+
+License:        GPLv2
+URL:            https://github.com/kilobyte/termrec
+Source0:    ovpn-convert-%{version}.tar.gz
+
+%define _unpackaged_files_terminate_build 0
+
+
+#BuildRequires:  sqlite-devel, zlib-devel, jansson-devel, mariadb-devel, json-c
+
+%description
+ovpn-convert
+
+%prep
+%setup -q
+
+%build
+ls -al
+mkdir -p %{buildroot}/usr/bin
+cp -prvf ovpn-convert %{buildroot}/usr/bin
+
+#rm CMakeCache.txt
+#cmake clean .
+#cmake .
+#pwd
+#make
+
+
+%files
+/usr/bin/ovpn-convert
