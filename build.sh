@@ -20,9 +20,8 @@ mkdir -p ~/rpmbuild/SOURCES
 rm -rf ~/rpmbuild/SOURCES/ovpn-convert-${RELEASE_VERSION} ovpn-convert-${RELEASE_VERSION}
 set -e
 
-#wget https://github.com/ndilieto/ovpn-convert/archive/v${RELEASE_VERSION}.tar.gz -O ovpn-convert-${RELEASE_VERSION}.tar.gz
 od=$(pwd)
-(cd $od && cmake . && make && cd $od/.. && rm -rf ovpn-convert-$RELEASE_VERSION && cp -prf ovpn-convert ovpn-convert-$RELEASE_VERSION && tar -czf ~/rpmbuild/SOURCES/ovpn-convert-${RELEASE_VERSION}.tar.gz ovpn-convert-$RELEASE_VERSION/ovpn-convert && tar -tzf ~/rpmbuild/SOURCES/ovpn-convert-${RELEASE_VERSION}.tar.gz)
+(cd $od && cmake . && make && cd $od/.. && rm -rf ovpn-convert-$RELEASE_VERSION && cp -prf $od ovpn-convert-$RELEASE_VERSION && tar -czf ~/rpmbuild/SOURCES/ovpn-convert-${RELEASE_VERSION}.tar.gz ovpn-convert-$RELEASE_VERSION/ovpn-convert && tar -tzf ~/rpmbuild/SOURCES/ovpn-convert-${RELEASE_VERSION}.tar.gz)
 
 
 

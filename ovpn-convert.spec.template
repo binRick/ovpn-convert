@@ -10,7 +10,7 @@ Source0:    ovpn-convert-%{version}.tar.gz
 %define _unpackaged_files_terminate_build 0
 
 
-#BuildRequires:  sqlite-devel, zlib-devel, jansson-devel, mariadb-devel, json-c
+BuildRequires:  json-c
 
 %description
 ovpn-convert
